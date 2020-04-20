@@ -1,0 +1,32 @@
+<script src="login.js"></script>
+        	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+	<script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+		apiKey: "AIzaSyDJEaT4VliwgO3tMAfrwktXD6TQc9fN60w",
+		authDomain: "aavashomes.firebaseapp.com",
+		databaseURL: "https://aavashomes.firebaseio.com",
+		projectId: "aavashomes",
+		storageBucket: "aavashomes.appspot.com",
+		messagingSenderId: "416827212266",
+		appId: "1:416827212266:web:1148e3a34a848b5d9ab293",
+		measurementId: "G-Q03PT4Z9B4"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+	</script>
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
+   <form action ="">
+   <input type ="text" id="name" />
+    <input type ="text"id="mob"/>
+    <input type ="text" id="email" />
+    <input type ="text" id="pass" />
+    <button onclick="writeuser();" name="submit"/>
+    </form>
