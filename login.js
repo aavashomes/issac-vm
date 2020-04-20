@@ -84,7 +84,7 @@ else if(mob.length!=10){
 var database = firebase.database();
 console.log(database);
 
-var data= firebase.database().ref('Signup/');
+var data= firebase.database().ref('PROJECT/');
 data.child(mob).set({
     Name:name,
     Email:email,
@@ -92,9 +92,9 @@ data.child(mob).set({
  
     password:pass,
     });
-    window.localStorage.setItem("n1",name);
-    window.localStorage.setItem("n2",email);
-    window.open("aavas_after.html",true);
+    window.alert("DONE !!");
+    
+
 }
 
 function checkuser() {
