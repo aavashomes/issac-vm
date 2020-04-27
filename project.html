@@ -39,6 +39,33 @@
 	  firebase.initializeApp(firebaseConfig);
 	  firebase.analytics();
 	</script>
+		<script>
+			var database = firebase.database();
+
+
+function writeuser() {
+    var name=document.getElementById("name").value;
+      var email=document.getElementById("email").value;
+  var mob=document.getElementById("mobile").value;
+
+var vehicle=document.getElementById("vehicle").value;
+     console.log(name+" "+mssg);
+
+ 
+var database = firebase.database();
+console.log(database);
+
+var data= firebase.database().ref('PRO/');
+data.child(mob).set({
+    Name:name,
+    Email:email,
+    Mobile:mob,
+    Vehicle :vehicle
+    });
+    window.alert("DONE BOOKING !!");
+}
+
+		</script>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
