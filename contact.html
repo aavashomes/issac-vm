@@ -54,8 +54,8 @@ var mssg=document.getElementById("message").value;
 var database = firebase.database();
 console.log(database);
 
-var data= firebase.database().ref('PRO/');
-data.child(mob).set({
+var data= firebase.database().ref('HELP/');
+data.child(email).set({
     Name:name,
     Email:email,
     Mobile:mob,
