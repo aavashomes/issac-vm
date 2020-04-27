@@ -14,7 +14,63 @@
 		<!-- meta character set -->
 		<meta charset="UTF-8">
 		<!-- Site Title -->
-		<title>Contact</title>
+		<title>Sphere Pollution</title>
+       
+        	<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.0.4/firebase-database.js"></script>
+
+	<script src="https://www.gstatic.com/firebasejs/7.2.2/firebase-analytics.js"></script>
+
+	<script>
+	  // Your web app's Firebase configuration
+	  var firebaseConfig = {
+		apiKey: "AIzaSyDJEaT4VliwgO3tMAfrwktXD6TQc9fN60w",
+		authDomain: "aavashomes.firebaseapp.com",
+		databaseURL: "https://aavashomes.firebaseio.com",
+		projectId: "aavashomes",
+		storageBucket: "aavashomes.appspot.com",
+		messagingSenderId: "416827212266",
+		appId: "1:416827212266:web:1148e3a34a848b5d9ab293",
+		measurementId: "G-Q03PT4Z9B4"
+	  };
+	  // Initialize Firebase
+	  firebase.initializeApp(firebaseConfig);
+	  firebase.analytics();
+	</script>
+		<script>
+			var database = firebase.database();
+
+
+function writeuser() {
+    var name=document.getElementById("name").value;
+      var email=document.getElementById("email").value;
+  var mob=document.getElementById("mobile").value;
+
+var mssg=document.getElementById("message").value;
+ 
+
+ 
+var database = firebase.database();
+console.log(database);
+
+var data= firebase.database().ref('PRO/');
+data.child(mob).set({
+    Name:name,
+    Email:email,
+    Mobile:mob,
+    Message:mssg
+    });
+	
+    var r = window.confirm("We Got Your Query !! '\n' Contact You via Email ");
+    if(r==true)
+    {window.open('index.html', '_blank');}
+	else
+	{window.open('contact.html','_blank');}
+
+}
+
+		</script>
 
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet"> 
 			<!--
@@ -40,10 +96,10 @@
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
 			          <li><a href="index.html">Home</a></li>
-			      
-			          <li><a href="services.html">Services</a></li>
 			          
-			           		          					          		          
+			          <li><a href="services.html">Services</a></li>
+			         
+			         				          					          		          
 			          <li><a href="contact.html">Contact</a></li>
 			        </ul>
 			      </nav><!-- #nav-menu-container -->		    		
@@ -58,9 +114,9 @@
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
 							<h1 class="text-white">
-								Contact Us				
+								BookinG		
 							</h1>	
-							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="contact.html"> Contact Us</a></p>
+							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="contact.html"> Contact</a></p>
 						</div>	
 					</div>
 				</div>
@@ -103,21 +159,23 @@
 							</div>														
 						</div>
 						<div class="col-lg-8">
-							<form class="form-area contact-form text-right" id="myForm" action="mail.php" method="post">
+							<form class="form-area contact-form text-right" action"" >
 								<div class="row">	
 									<div class="col-lg-6 form-group">
-										<input name="name" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
+										<input id="name" type="text" placeholder="Enter your name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" class="common-input mb-20 form-control" required="" type="text">
 									
-										<input name="email" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+										<input id="email" type="text" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
+                                        <input id="mobile" type="text" placeholder="Enter Mobile no."  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Mobile no.'" class="common-input mb-20 form-control" required="" type="number" maxlength="11">
 
-										<input name="mobile" placeholder="Enter Mobile No. " onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Mobile No." class="common-input mb-20 form-control" required="" type="text">
+										<input id="vehicle" type="text" placeholder="Enter Vehicle No." onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Vehicle No.'" class="common-input mb-20 form-control" required="" type="text">
 									</div>
-									<div class="col-lg-6 form-group">
-										<textarea class="common-textarea form-control" name="message" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter '" required=""></textarea>				
-									</div>
+									    
+<div class="col-lg-6 form-group">
+                    <textarea class="common-textarea form-control" id="message" name="message" placeholder="Enter Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter '" required=""></textarea>        
+                  </div>
 									<div class="col-lg-12">
 										<div class="alert-msg" style="text-align: left;"></div>
-										<button class="genric-btn primary" style="float: right;">Send Message</button>											
+										<button class="genric-btn primary" onclick="writeuser();"style="float: right;">Verify & Book</button>											
 									</div>
 								</div>
 							</form>	
