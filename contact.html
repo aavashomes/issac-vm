@@ -48,25 +48,25 @@ function writeuser() {
   var mob=document.getElementById("mobile").value;
 
 //var mssg=document.getElementById("message").value;
- 
+ window.alert("working ");
 
  
 var database = firebase.database();
 console.log(database);
 
-var data= firebase.database().ref('HELP/');
-data.child(email).set({
-    Name:name,
-    Email:email,
-    Mobile:mob,
-  //  Message:mssg
-    });
+// var data= firebase.database().ref('HELP/');
+// data.child(email).set({
+//     Name:name,
+//     Email:email,
+//     Mobile:mob,
+//   //  Message:mssg
+//     });
 	
-    var r = window.confirm("We Got Your Query !! Contact You via Email ");
-    if(r==true)
-    {window.open('index.html', '_blank');}
-	else
-	{window.open('contact.html','_blank');}
+//     var r = window.confirm("We Got Your Query !! Contact You via Email ");
+//     if(r==true)
+//     {window.open('index.html', '_blank');}
+// 	else
+// 	{window.open('contact.html','_blank');}
 
 }
 
