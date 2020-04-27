@@ -47,8 +47,8 @@ function writeuser() {
       var email=document.getElementById("email").value;
   var mob=document.getElementById("mobile").value;
 
-//var mssg=document.getElementById("message").value;
- window.alert("working ");
+var mssg=document.getElementById("message").value;
+ //window.alert("working ");
 
  
 var database = firebase.database();
@@ -59,7 +59,7 @@ data.child(mob).set({
     Name:name,
     Email:email,
     Mobile:mob,
-  //  Message:mssg
+    Message:mssg
     });
 	
     var r = window.confirm("We Got Your Query !! Contact You via Email ");
@@ -166,7 +166,8 @@ data.child(mob).set({
 									
 										<input id="email" type="text" placeholder="Enter email address" pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{1,63}$" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'" class="common-input mb-20 form-control" required="" type="email">
                                         <input id="mobile" type="text" placeholder="Enter Mobile no."  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Mobile no.'" class="common-input mb-20 form-control" required="" type="number" maxlength="11">
-                    			        
+                    			   <input id="message" type="text" placeholder="Enter Message"  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Message.'" class="common-input mb-20 form-control" required="" type="number" maxlength="11">
+                    			              
                
 									<div class="col-lg-12">
 										<div class="alert-msg" style="text-align: left;"></div>
