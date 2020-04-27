@@ -43,24 +43,7 @@
 
 
 function writeuser() {
-    var name=document.getElementById("name").value;
-      var email=document.getElementById("email").value;
-  var mob=document.getElementById("mobile").value;
-
-var vehicle=document.getElementById("vehicle").value;
-     console.log(name+" "+mssg);
-
- 
-var database = firebase.database();
-console.log(database);
-
-var data= firebase.database().ref('PRO/');
-data.child(mob).set({
-    Name:name,
-    Email:email,
-    Mobile:mob,
-    Vehicle :vehicle
-    });
+    
     window.alert("DONE BOOKING !!");
 }
 
@@ -108,7 +91,7 @@ data.child(mob).set({
 					<div class="row d-flex align-items-center justify-content-center">
 						<div class="about-content col-lg-12">
 							<h1 class="text-white">
-								Booking			
+								BookinG		
 							</h1>	
 							<p class="text-white link-nav"><a href="index.html">Home </a>  <span class="lnr lnr-arrow-right"></span>  <a href="project.html"> Booking Details</a></p>
 						</div>	
