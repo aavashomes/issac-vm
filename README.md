@@ -1,1 +1,1 @@
-# applewithcoffee
+# College Minor project
