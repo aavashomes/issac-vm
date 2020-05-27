@@ -59,7 +59,6 @@ body {font-family: Arial, Helvetica, sans-serif;}
   opacity: 0.9;
 }
 
-
 .btn:hover {
   opacity: 1;
 }
@@ -84,9 +83,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <input class="input-field" type="password" placeholder="Password" id="password">
   </div>
 
-  <button onclick="login()" class="btn">Create Account</button><br><br><br>
-<a href="logintesting.html"<button class="btn1">Already have an Account</button></a>
-		
+  <button onclick="login()" class="btn">Signin</button><br><br><br>
+<a href="index.html"<button class="btn1">Create an Account</button></a>
 </div>
 <script>
 function login()
@@ -94,8 +92,9 @@ function login()
 var name=document.getElementById("name").value;
 var email=document.getElementById("email").value;
 var pass=document.getElementById("password").value;
-firebase.auth().createUserWithEmailAndPassword(email, pass).then(function()
+firebase.auth().signInWithEmailAndPassword(email, pass).then(function()
 {
+	console.log(name);
     window.localStorage.setItem("n1",name);
     window.localStorage.setItem("n2",email);
     window.open("vm.html",true);
@@ -103,15 +102,18 @@ firebase.auth().createUserWithEmailAndPassword(email, pass).then(function()
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
-  if (errorCode === 'auth/email-already-in-use') {
-    window.alert('Email already associated with another account.');
+
+  if (errorCode === 'auth/user-not-found') {
+    window.alert('Email Not Found Create an account');
     // Handle account linking here, if using.
-  } 
-    // Handle account linking here, if using.
-  else {
+  }
+
+  if (errorCode === 'auth/wrong-password') {
+    window.alert('Incorrect Password');}
+else {
     console.error(error);}
 });
-console.log(name);
+
 
 }
 
