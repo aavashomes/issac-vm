@@ -59,8 +59,8 @@
 	 <script>
 function signout(){
 firebase.auth().signOut().then(function() {
-  
-window.localStorage.setItem("n1",null);
+  name=null;
+window.localStorage.setItem("n1",name);
 
 window.location="index.html";
 }).catch(function(error) {
