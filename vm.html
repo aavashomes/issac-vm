@@ -59,7 +59,8 @@
 	 <script>
 function signout(){
 firebase.auth().signOut().then(function() {
-  window.location="index.html";
+  var n=null;
+window.location="index.html";
 }).catch(function(error) {
   // An error happened.
 });
